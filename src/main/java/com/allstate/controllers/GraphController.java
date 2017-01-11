@@ -15,9 +15,13 @@ public class GraphController {
 
     @RequestMapping(value ="/graph/distance" , method = RequestMethod.POST)
     public Map<String,Double> distance(@RequestBody List<Graph> graphs){
-        double result= Graph.distance(graphs);
+        double distance= Graph.distance(graphs);
+        double slope= Graph.slope(graphs);
+        double yintercept= Graph.yIntercept(graphs);
         Map<String,Double> map = new HashMap<>();
-        map.put("distance",result);
+        map.put("distance",distance);
+        map.put("slope",slope);
+        map.put("yintercept",yintercept);
         return map;
     }
 

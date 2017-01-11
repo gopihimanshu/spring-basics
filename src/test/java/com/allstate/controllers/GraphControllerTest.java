@@ -35,8 +35,6 @@ public class GraphControllerTest {
         MockHttpServletRequestBuilder request = post("/graph/distance")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content("[{\"x\":2, \"y\":4},{\"x\":6, \"y\":8}]");
-        System.out.println(request.toString());
-
 
         this.mvc.perform(request)
                 .andExpect(status().isOk())
