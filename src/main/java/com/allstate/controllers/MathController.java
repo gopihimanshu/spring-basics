@@ -29,4 +29,13 @@ public class MathController {
         map.put("factorial",result);
         return map;
     }
+
+    @RequestMapping(value="/math/factorialIterate/{x}",method=RequestMethod.GET)
+    public Map<String,Integer> factorialUsingIterate(@PathVariable int x){
+        int result = Math.factorialUsingIterate(x);
+        Map<String ,Integer> map=new HashMap<>();
+        map.put("original",x);
+        map.put("factorial",result);
+        return map;
+    }
 }

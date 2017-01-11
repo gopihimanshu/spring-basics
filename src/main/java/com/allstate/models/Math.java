@@ -1,6 +1,7 @@
 package com.allstate.models;
 
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Math {
 
@@ -8,10 +9,13 @@ public class Math {
         return num * num;
     }
 
-
     public static int factorial( int n) {
-        int res = IntStream.rangeClosed(1, n).reduce(1, (a, b) -> a * b);
-        //System.out.println(res);
-        return res;
+        return IntStream.rangeClosed(1, n).reduce(1, (a, b) -> a * b);
+    }
+
+    public static int factorialUsingIterate( int num) {
+       return Stream.iterate(1, n  ->  n +1)
+                    .limit(num)
+                    .reduce(1,(acc,res) -> acc*res);
     }
 }

@@ -52,4 +52,13 @@ public class MathControllerTest {
                 .andExpect(jsonPath("$.factorial",is(24)));
 
     }
+
+    @Test
+    public void shouldFactorialAnIntegerStreamIterate() throws Exception {
+
+        this.mvc.perform(get("/math/factorialIterate/4"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.factorial",is(24)));
+
+    }
 }
