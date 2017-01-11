@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class HelloTest {
+public class MathTest {
     @Before
     public void setUp() throws Exception {
 
@@ -18,9 +18,8 @@ public class HelloTest {
     }
 
     @Test
-    public void shouldCreateANewInstanceOfHello() throws Exception {
-        Hello h=new Hello("Hello Junit");
-        assertEquals("Hello Junit", h.getMessage());
+    public void shouldSquareAnInteger() throws Exception {
+        int result = Math.square(4);
+        assertEquals(16,result);
     }
-
 }
