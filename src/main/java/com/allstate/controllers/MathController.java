@@ -30,12 +30,15 @@ public class MathController {
         return map;
     }
 
-    @RequestMapping(value="/math/factorialIterate/{x}",method=RequestMethod.GET)
-    public Map<String,Integer> factorialUsingIterate(@PathVariable int x){
-        int result = Math.factorialUsingIterate(x);
+
+
+    @RequestMapping(value="/math/fibonacci/{x}",method=RequestMethod.GET)
+    public Map<String,Integer> fibonacci(@PathVariable int x){
+         int result= Math.fibonacci(x);
+        System.out.println( result);
         Map<String ,Integer> map=new HashMap<>();
-        map.put("original",x);
-        map.put("factorial",result);
+        map.put("input number",x);
+        map.put("fibonacci",result);
         return map;
     }
 }
